@@ -78,7 +78,7 @@
       }
 
       .dropdown {
-        background-image: url("/Angular/DABubble/assets/icons/expand_more.png");
+        background-image: url("/bubble/assets/icons/expand_more.png");
       }
     }
   }
@@ -117,7 +117,7 @@
     }
 
     .dropdown {
-      background-image: url("/Angular/DABubble/assets/icons/expand_more.png");
+      background-image: url("/bubble/assets/icons/expand_more.png");
     }
   }
 }
@@ -136,13 +136,13 @@
 
   &:hover {
     >img {
-      content: url("/Angular/DABubble/assets/icons/person_add_hover.svg");
+      content: url("/bubble/assets/icons/person_add_hover.svg");
     }
   }
 }
 
 .dropdown {
-  background-image: url("/Angular/DABubble/assets/img/keyboard_arrow_down.png");
+  background-image: url("/bubble/assets/img/keyboard_arrow_down.png");
   width: 30px;
   height: 30px;
 }

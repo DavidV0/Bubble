@@ -16,7 +16,7 @@ import { RegisterComponent } from './register/register.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'DABubble';
+  title = 'Bubble';
 
 
   constructor() {}
