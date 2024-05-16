@@ -1,0 +1,47 @@
+@import './../../styles/includeStyles.scss';
+
+.user-list-item-wrapper{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 4px 20px;
+    border-radius: 30px;
+    font-size: $fnt-size-XS;
+    width: fit-content;
+    > .img-wrapper{
+        position: relative;
+        > img{
+            width: 50px;
+            aspect-ratio: 1;
+        }
+        > .status-lamp{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 14px;
+            aspect-ratio: 1;
+            background-color: $dark-grey;
+            border: 2px solid $white;
+            border-radius: 100%;
+        }
+        > .status-lamp.active{
+            background-color: $online-green;
+        }
+    }
+    &:hover{
+        background-color: $prim-color-light-hover;
+    }
+}
+
+.user-list-item-wrapper.checked{
+    background-color: $prim-color-light-hover;
+    color: $prim-color-bright-hover;
+    font-weight: bold;
+}
+
+@media(max-width: 320px){
+    .user-list-item-wrapper{
+        font-size: $fnt-size-XXS;
+    }
+}

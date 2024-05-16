@@ -1,0 +1,133 @@
+@import './../../../../app/shared/styles/includeStyles.scss';
+
+.edit-profile-card {
+    position: absolute;
+    right: 20px;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    padding: 40px;
+    border-radius: 30px;
+    width: fit-content;
+    min-width: 500px;
+    background-color: $white;
+
+
+    >.card-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+
+
+        >.back-btn {
+            width: 40px;
+
+            >.back-btn-icon {
+                mask-image: url("/Angular/DABubble/assets/icons/close.svg");
+            }
+        }
+    }
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    width: 100%;
+
+    >img {
+        align-self: center;
+        cursor: pointer;
+        width: 200px;
+        aspect-ratio: 1;
+        border-radius: 100%;
+    }
+
+    >form {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+
+        >.form-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .header-ipt-field {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                font-size: $fnt-size-S;
+                font-weight: bold;
+
+                >img {
+                    width: 30px;
+                    aspect-ratio: 1;
+                }
+            }
+        }
+
+        >.btn-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 45px;
+        }
+    }
+}
+
+@media(max-width: 1350px) {
+    .edit-profile-card {
+        right: 0px;
+        top: 80px;
+        gap: 25px;
+        min-width: 100vw;
+
+        >.card-header {
+            >.back-btn {
+                width: 30px;
+            }
+        }
+    }
+
+    .card-content {
+        gap: 25px;
+
+        >img {
+            width: 100px;
+        }
+
+        >form {
+            gap: 25px;
+
+            >.form-content-wrapper {
+                gap: 8x;
+
+                .header-ipt-field {
+                    gap: 10px;
+                    font-size: $fnt-size-XS;
+
+                    >img {
+                        width: 20px;
+                    }
+                }
+            }
+
+            >.btn-wrapper {
+                gap: 25px;
+            }
+        }
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    span {
+        font-size: 16px;
+    }
+
+
+}

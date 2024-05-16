@@ -1,0 +1,7 @@
+<div class="user-list-item-wrapper" [class.checked]="isChecked()" (click)="showMiddle()">
+  <div class="img-wrapper">
+    <img [src]="user.imgPath" alt="avatar" />
+    <div class="status-lamp" [class.active]="user.status === 'Aktiv'"></div>
+  </div>
+  <span>{{ user.name }} <span *ngIf="activeUser.id === user.id">(Du)</span></span>
+</div>

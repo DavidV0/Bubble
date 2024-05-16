@@ -1,0 +1,235 @@
+@import './../../shared/styles/includeStyles.scss';
+
+.main {
+    display: flex;
+    position: relative;
+    font-family: "Nunito";
+    justify-content: center;
+    align-items: center;
+    background-color: #eceefe;
+}
+
+
+.choose-avatar-card {
+    width: 606px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 67px;
+    border-radius: $border-radius-large;
+    font-size: $fnt-size-S;
+    background-color: white;
+
+    >.back-btn {
+        position: absolute;
+        left: 32px;
+        top: 45px;
+        width: 40px;
+
+        >.back-btn-icon {
+            mask-image: url("/Angular/DABubble/assets/icons/arrow_left_black.svg");
+        }
+    }
+
+    >.card-header {
+        color: $prim-color;
+
+        >h2 {
+            font-size: $fnt-size-L;
+        }
+    }
+
+    >.card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        >.profile-img {
+            width: 168px;
+            aspect-ratio: 1;
+            align-self: center;
+            border-radius: 50%;
+            padding: 8px;
+            object-fit: cover;
+
+            &:hover {
+                background-color: $hover-grey;
+            }
+        }
+
+        >.card-content-upload-img-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            >input {
+                position: absolute;
+                visibility: hidden;
+
+            }
+        }
+    }
+
+    >.card-footer {
+        align-self: flex-end;
+    }
+
+}
+
+.card-content-avatar-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    >.avatar-list-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        >.user-name {
+            align-self: center;
+            font-size: $fnt-size-M;
+        }
+    }
+
+    >.avatar-list-img-wrapper {
+        display: flex;
+        gap: 8px;
+
+        >.avatar-btn {
+            aspect-ratio: 1;
+            padding: 4px;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: $hover-grey;
+            }
+        }
+
+        >.avatar-active {
+            background-color: $prim-color-light-hover;
+        }
+    }
+}
+
+@media(max-width: 600px) {
+
+
+
+    .choose-avatar-card {
+        width: 100%;
+        position: unset;
+        padding: 0px 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        >.back-btn {
+            position: absolute;
+            left: 5px;
+            top: 20px;
+            width: 40px;
+
+            >.back-btn-icon {
+                mask-image: url("/Angular/DABubble/assets/icons/arrow_left_black.svg");
+            }
+        }
+
+        >.card-header {
+            color: $prim-color;
+
+            >h2 {
+                font-size: 24px;
+                padding-top: 22px;
+            }
+        }
+
+        >.card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            >.profile-img {
+                width: 100px;
+                aspect-ratio: 1;
+                align-self: center;
+                border-radius: 50%;
+                padding: 8px;
+
+                &:hover {
+                    background-color: $hover-grey;
+                }
+            }
+
+            >.card-content-upload-img-wrapper {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+
+                >input {
+                    position: absolute;
+                    visibility: hidden;
+
+                }
+
+                span {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        >.card-footer {
+            align-self: flex-end;
+        }
+
+    }
+
+    .card-content-avatar-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        >.avatar-list-text-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            >.user-name {
+                align-self: center;
+                font-size: 24px;
+            }
+
+            span {
+                font-size: 16px;
+            }
+        }
+
+        >.avatar-list-img-wrapper {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+
+            >.avatar-btn {
+                aspect-ratio: 1;
+                padding: 4px;
+                border-radius: 50%;
+
+                &:hover {
+                    background-color: $hover-grey;
+                }
+            }
+
+            >.avatar-active {
+                background-color: $prim-color-light-hover;
+            }
+        }
+    }
+
+
+
+
+
+
+}

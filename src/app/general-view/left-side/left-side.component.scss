@@ -1,0 +1,240 @@
+@import "./../../shared/styles/includeStyles.scss";
+@import "./../../../styles.scss";
+
+.content {
+  position: relative;
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
+  border-radius: 43px;
+  overflow-y: auto;
+}
+
+
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+
+  >div {
+    display: flex;
+    align-items: center;
+
+
+
+    >img {
+      margin-left: 13px;
+      width: 60px;
+      height: 60px;
+    }
+
+
+    >p {
+      font-family: "Nunito";
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32.74px;
+      text-align: center;
+
+      margin: 0;
+      padding-left: 8px;
+    }
+  }
+
+
+  >img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+
+    &:hover {
+      content: url("/Angular/DABubble/assets/icons/edit_squarehover.svg");
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+      background-color: $prim-color-light-hover;
+      padding: 8px;
+    }
+  }
+}
+
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  width: 100%;
+
+}
+
+.channels {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  //align-items: center;
+}
+
+.channel-header {
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+  >div {
+    display: flex;
+
+
+    >img {
+      margin-left: 16px;
+    }
+
+
+    >b {
+      text-align: center;
+      margin: 0;
+      margin-left: 12px;
+    }
+  }
+}
+
+.dropdown {
+  background-image: url("/Angular/DABubble/assets/icons/arrow_drop_down.svg");
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.hover {
+  cursor: pointer;
+
+
+  &:hover {
+    >b {
+      color: $prim-color;
+    }
+
+
+    .dropdown {
+      background-image: url("/Angular/DABubble/assets/icons/arrow_drop_downhover.svg");
+    }
+
+    >img {
+      content: url("/Angular/DABubble/assets/icons/workspaceshover.svg");
+    }
+  }
+}
+
+.plus-icon {
+  background-image: url("/Angular/DABubble/assets/icons/add.svg");
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+
+  &:hover {
+    background-image: url("/Angular/DABubble/assets/icons/addhover.svg");
+    border-radius: 50px;
+    background-color: $prim-color-light-hover;
+    padding: 8px;
+  }
+}
+
+.channels-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+
+  padding: 0 40px;
+  gap: 13px;
+
+  &.collapsed {
+    display: none;
+  }
+}
+
+.channels-name {
+  font-family: "Nunito";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24.55px;
+  color: black;
+  text-align: left;
+  border-radius: 50px;
+  padding: 4px 16px;
+  cursor: pointer;
+  margin: 0;
+
+  &:hover {
+    background-color: $prim-color-light-hover;
+    color: $prim-color;
+  }
+}
+
+.checked {
+  background-color: $prim-color-light-hover;
+  color: $prim-color-bright-hover;
+  font-weight: bold;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: start !important;
+  border-radius: 100px;
+  gap: 15px;
+  padding: 0 20px 0 49px;
+
+
+  >p {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  &:hover {
+    color: $prim-color;
+  }
+
+  &:hover img {
+    content: url("/Angular/DABubble/assets/icons/add_circle_hover.jpg");
+  }
+}
+
+.direct-messages {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  >app-members-list {
+  >app-members-list {
+    margin-top: 40px;
+
+
+    >img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.direct-messages-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 13px;
+
+
+  &.collapsed {
+    display: none;
+  }
+}
+}

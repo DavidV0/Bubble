@@ -1,0 +1,51 @@
+<div class="edit-channel-card">
+    <div class="card-header">
+        <h3> <span>#</span>{{ channel.name }}</h3>
+        <button class="btn-default icon-btn back-btn" (click)="overlayCtrlService.hideOverlay()">
+            <div class="back-btn-icon"></div>
+        </button>
+    </div>
+    <div class="card-content">
+        <div class="name-field-wrapper" [class.edit-field-view]="editName">
+            <div class="field-header-wrapper">
+                <span>Channel-Name</span>
+                @if (editName) {
+                <button class="btn-default text-btn" (click)="editName = false; updateChannelName()">Speichern</button>
+                } @else {
+                <button class="btn-default text-btn" (click)="editName = true">Bearbeiten</button>
+                }
+            </div>
+            <div class="form-field-ipt-style2">
+                <div class="ipt-field-wrapper">
+                    <span>#</span>
+                    <input type="text" placeholder="z.B. Kooperationsprojekte" name="name" #name="ngModel"
+                        [(ngModel)]="newName" [disabled]="!editName">
+                </div>
+            </div>
+        </div>
+        <div class="channel-details-wrapper" [class.edit-field-view]="editDetails">
+            <div class="field-header-wrapper">
+                <span>Beschreibung</span>
+                @if (editDetails) {
+                <button class="btn-default text-btn"
+                    (click)="editDetails = false ; updateChannelDescription()">Speichern</button>
+                } @else {
+                <button class="btn-default text-btn" (click)="editDetails = true">Bearbeiten</button>
+                }
+            </div>
+            <div class="form-field-textarea-style2">
+                <div class="textarea-field-wrapper">
+                    <textarea (keyup)="resizeTextarea()" placeholder="Dein Text hier" name="description"
+                        #description="ngModel" [(ngModel)]="channel.description" [disabled]="!editDetails"
+                        #textarea></textarea>
+                </div>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="creator-wrapper">
+                <span>Erstellt von</span>
+                <span>{{ channel.creator.name }}</span>
+            </div>
+        </div>
+    </div>
+    <button class="btn-default primary-btn" (click)="leaveChannel()">Channel verlassen</button>
+</div>

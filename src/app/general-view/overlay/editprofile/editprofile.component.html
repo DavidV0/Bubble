@@ -1,0 +1,48 @@
+<div class="edit-profile-card">
+    <div class="card-header">
+        <h3>Dein Profil bearbeiten</h3>
+        <button class="btn-default icon-btn back-btn" (click)="overlayCtrlService.hideOverlay()">
+            <div class="back-btn-icon"></div>
+        </button>
+    </div>
+    <div class="card-content">
+        <img src="{{ user.imgPath }}" alt="">
+        <form #editProfileForm="ngForm" (ngSubmit)="onSubmit(editProfileForm)">
+            <div class="form-content-wrapper">
+                <div class="form-field-ipt-style2">
+                    <div class="header-ipt-field">
+                        <img src="assets/icons/account_circle.svg" alt="profile">
+                        <span>Vollständiger Name</span>
+                    </div>
+                    <div class="ipt-field-wrapper">
+                        <input type="text" placeholder="Dein Name hier" required name="name" #name="ngModel"
+                            [(ngModel)]="user.name">
+                    </div>
+                    <span [hidden]="name.untouched || name.valid" class="error-msg">Bitte schreiben Sie einen
+                        Namen</span>
+                </div>
+                <div class="form-field-ipt-style2">
+                    <div class="header-ipt-field">
+                        <img src="assets/img/mail.png" alt="profile">
+                        <span>E-Mail-Adresse</span>
+                    </div>
+                    <div class="ipt-field-wrapper">
+                        <input type="email" placeholder="Dein email hier" required name="email" #email="ngModel"
+                            [(ngModel)]="user.email" email>
+                    </div>
+                    <span [hidden]="email.untouched || email.valid" class="error-msg">Diese E-Mail-Adresse ist leider
+                        ungültig</span>
+                </div>
+            </div>
+            <div class="btn-wrapper">
+                <button type="button" class="btn-default secondary-btn"
+                    (click)="overlayCtrlService.showOverlay('registeredUserProfile',$event)">
+                    <span>Abbrechen</span>
+                </button>
+                <button class="btn-default primary-btn" [disabled]="!editProfileForm.valid">
+                    <span>Speichern</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

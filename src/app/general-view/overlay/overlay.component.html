@@ -1,0 +1,28 @@
+<div
+  [hidden]="overlayCtrlService.overlayType == 'hide'"
+  class="ovly-wrapper"
+  (click)="overlayCtrlService.hideOverlay()"
+>
+  @switch (overlayCtrlService.overlayType) { @case ("dropDownUserMenu")
+  {<app-dropdownusermenu (click)="stopHideOvly($event)"></app-dropdownusermenu>}
+  @case ("registeredUserProfile") {<app-registereduserprofile
+    (click)="stopHideOvly($event)"
+  ></app-registereduserprofile
+  >} @case ("editProfile") {<app-editprofile
+    (click)="stopHideOvly($event)"
+  ></app-editprofile
+  >} @case ("userProfile") {<app-userprofile
+    (click)="stopHideOvly($event)"
+  ></app-userprofile
+  >} @case ("createChannel") {<app-createchannel
+    (click)="stopHideOvly($event)"
+  ></app-createchannel
+  >} @case ("editChannel") {<app-editchannel
+    (click)="stopHideOvly($event)"
+  ></app-editchannel
+  >} @case ("add-members"){<app-add-members
+    (click)="stopHideOvly($event)"
+  ></app-add-members>
+  } @case ("members"){<app-members (click)="stopHideOvly($event)"></app-members>
+  } }
+</div>

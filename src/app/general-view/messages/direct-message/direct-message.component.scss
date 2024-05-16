@@ -1,0 +1,165 @@
+@import "./../../../shared/styles/includeStyles.scss";
+@import "./../../../../styles.scss";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  border-radius: 30px;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 32px 45px 20px 45px;
+  width: 100%;
+  box-shadow: 0px 2px 10px 0px #00000014;
+  gap: 20px;
+
+  >div {
+    >.status {
+      vertical-align: bottom;
+      margin-left: -20px;
+    }
+  }
+
+  >b {
+    font-family: "Nunito";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.74px;
+    text-align: left;
+  }
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: start;
+  justify-content: end;
+
+  >div {
+    display: flex;
+    align-items: end;
+
+    >b {
+      padding-left: 20px;
+    }
+  }
+}
+
+.info {
+  margin-top: 16px;
+  font-family: "Nunito";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.28px;
+  text-align: left;
+  color: #686868;
+}
+
+.info-span {
+  font-family: "Nunito";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27.28px;
+  text-align: left;
+  color: #535af1;
+}
+
+.pad20 {
+  padding: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  gap: 10px;
+  overflow-y: auto;
+  width: 100%;
+  flex-grow: 2;
+
+  >.messages-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    flex-grow: 2;
+  }
+
+  >.content-footer-wrapper {
+    padding-left: 45px;
+
+    >.msg-second-user {
+      display: flex;
+      align-items: flex-end;
+      gap: 15px;
+    }
+  }
+}
+
+.sendBtn {
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    content: url("/Angular/DABubble/assets/icons/Sendiconhover.svg");
+  }
+}
+
+@media (max-width: 1350px) {
+  .header {
+    padding: 22px 25px 10px 25px;
+    gap: 10px;
+
+    >b {
+      font-size: $fnt-size-XS;
+    }
+  }
+
+  .info {
+    font-size: 16px;
+  }
+
+  .info-span {
+    font-size: 16px !important;
+  }
+
+  .pad20 {
+    padding: 20px;
+  }
+
+  .content-wrapper {
+    gap: 10px;
+
+    >.content-footer-wrapper {
+      padding-left: 25px;
+
+      >.msg-second-user {
+        gap: 15px;
+
+        >img {
+          width: 55px;
+        }
+      }
+    }
+  }
+
+  .content {
+    border-radius: 0;
+    height: 90vh;
+  }
+
+  .sendBtn {
+    width: 40px;
+    height: 40px;
+
+    &:hover {
+      content: url("/Angular/DABubble/assets/icons/Sendiconhover.svg");
+    }
+  }
+}

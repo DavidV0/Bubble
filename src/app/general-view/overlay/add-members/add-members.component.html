@@ -1,0 +1,13 @@
+<div class="content">
+  <div>
+    <h3>Leute hinzufügen</h3>
+    <button class="btn-default icon-btn back-btn" (click)="overlayCtrlService.hideOverlay()">
+      <div class="back-btn-icon"></div>
+    </button>
+  </div>
+  <p># {{ channel.name }}</p>
+  <app-user-select class="list" (selectedUsersOut)="setNewUsers($event)"></app-user-select>
+  <button class="btn-default primary-btn btn" [disabled]="newUsers.length == 0" (click)="joinChannel()">
+    <span>Hinzufügen</span>
+  </button>
+</div>

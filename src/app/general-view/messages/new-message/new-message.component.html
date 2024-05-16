@@ -1,0 +1,35 @@
+<div class="content">
+  <div class="header">
+    <h2>Neue Nachricht</h2>
+    <div class="form-field-ipt-style2">
+      <div class="ipt-field-wrapper field">
+        <input type="text" placeholder="An: #channel, oder @jemand oder E-Mail Adresse" name="userIds"
+          [(ngModel)]="searchPrompt" (keyup)="filterUsersAndChannels()" autocomplete="off" />
+      </div>
+      @if (sendTo == undefined) {
+      <div class="ipt-field-dropdown">
+        <div class="wrapper-users">
+          @for (user of filteredUsers; track user; let idx = $index) {
+          <div class="user-chip" (click)="setSendTo('user', idx)">
+            <img src="{{ user.imgPath }}" alt="" />
+            <span> {{ user.name }} </span>
+          </div>
+          }
+        </div>
+        <div class="wrapper-channels">
+          @for (channel of filteredChannels; track channel; let idx = $index) {
+          <div class="channel-chip" (click)="setSendTo('channel', idx)">
+            <span># {{ channel.name }}</span>
+          </div>
+          }
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+
+  <div class="massages-wrapper">
+    <div></div>
+  </div>
+  <app-textarea-container [type]="'newMessage'" [sendTo]="this.sendTo"></app-textarea-container>
+</div>

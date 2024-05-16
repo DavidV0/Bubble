@@ -1,0 +1,31 @@
+<div class="user-profile-card">
+    <div class="card-header">
+        <h3>Profil</h3>
+        <button class="btn-default icon-btn back-btn" (click)="overlayCtrlService.hideOverlay()">
+            <div class="back-btn-icon"></div>
+        </button>
+    </div>
+    <div class="card-content">
+        <img src="{{ user.imgPath }}" alt="">
+        <div class="name-status-wrapper">
+            <h2>{{ user.name }}</h2>
+            <div class="status-wrapper" [class.active]="user.status == 'Aktiv'">
+                <div class="status-lamp"></div>
+                <span class="status-text">{{(user.status)? user.status:''}}</span>
+            </div>
+        </div>
+        <div class="email-wrapper">
+            <div>
+                <img src="/Angular/DABubble/assets/img/mail.png" alt="mail">
+                <span><b>E-Mail-Adresse</b></span>
+            </div>
+            <span>{{ user.email }}</span>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button class="btn-default primary-btn" (click)="sendMessage()">
+            <img src="assets/icons/comment.svg" alt="message">
+            <span>Nachricht</span>
+        </button>
+    </div>
+</div>s

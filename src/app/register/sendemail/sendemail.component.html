@@ -1,0 +1,26 @@
+<div class="main">
+    <div class="send-email-card">
+        <button class="btn-default icon-btn back-btn" (click)="goBack()">
+            <div class="back-btn-icon"></div>
+        </button>
+        <div class="card-header">
+            <h2>Passwort zurücksetzten</h2>
+        </div>
+        <form class="card-content" #resetPWForm="ngForm" (ngSubmit)="onSubmit(resetPWForm)">
+            <span>Bitte geben Sie ihre E-Mail-Adresse ein.</span>
+            <div class="form-field-ipt-text-icon">
+                <div class="ipt-field-wrapper">
+                    <div class="ipt-email-img"></div>
+                    <input type="email" placeholder="beispielname@email.com" required name="email" #email="ngModel"
+                        [(ngModel)]="eMail" email>
+                </div>
+                <span [hidden]="email.untouched || email.valid" class="error-msg">*Diese E-Mail-Adresse ist leider
+                    ungültig.</span>
+            </div>
+            <span class="info-text">Wir senden Ihnen eine E-Mail, über die <br>
+                Sie Ihr Passwort ändern können.</span>
+            <button class="btn-default primary-btn" [disabled]="!resetPWForm.valid">E-Mail senden</button>
+        </form>
+    </div>
+</div>
+<app-overlayemailsend [onIptChangeShowOverlay]="toggleOverlay"></app-overlayemailsend>

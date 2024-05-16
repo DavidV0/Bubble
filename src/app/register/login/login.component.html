@@ -1,0 +1,47 @@
+<div class="main-login">
+
+  <div class="login-container-login">
+    <div class="headline-container-login">
+      <div class="headline-login">Anmeldung</div>
+      <div class="subheadline-login">
+        Wir empfehlen dir, die E-Mail-Adresse zu nutzen, die du bei der Arbeit
+        verwendest.
+      </div>
+    </div>
+    <form (ngSubmit)="onSubmit(f)" class="input-container-login" #f="ngForm">
+      <input type="email" required placeholder="beispielname@email.com" id="userEmail" name="userEmail" ngModel
+        #userEmail="ngModel" class="input-email-login input-fields-login" email />
+      @if (!userEmail.valid && userEmail.touched) {
+      <div class="invalid-input-login">
+        *Diese E-Mail-Adresse ist leider ungültig.
+      </div>
+      }
+      <input type="password" required placeholder="Passwort" id="password" name="password" ngModel #password="ngModel"
+        class="input-pw-login input-fields-login" />
+      @if (!password.valid && password.touched || loginError()) {
+      <div class="invalid-input-login">
+        *Falsches Passwort. Bitte noch einmal versuchen.
+      </div>
+      }
+      <div class="forgot-pw-login" (click)="forgotPw()">Passwort vergessen ?</div>
+      <div class="divider-login">
+        <img src="assets/img/line.png" alt="" />
+        <div>ODER</div>
+        <img src="assets/img/line.png" alt="" />
+      </div>
+      <div class="googleLogin-login input-fields-login" (click)="googleLogIn()">
+        <img src="assets/img/Google.png" alt="" />
+        <p>Anmelden mit Google</p>
+      </div>
+
+      <div class="btn-container-login">
+        <button [disabled]="!f.valid" type="submit" class="login-btn-login">
+          Anmelden
+        </button>
+        <button type="button" class="guest-login-login" (click)="logInTestUser()">Gäste-Login</button>
+      </div>
+    </form>
+  </div>
+
+
+</div>

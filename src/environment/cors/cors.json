@@ -1,0 +1,11 @@
+[
+  {
+    "origin": ["*"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]
+  
+
+  /* run this in cmd in this folder to set cors settings:
+   gsutil cors set cors.json gs://dabubble-26c87.appspot.com*/

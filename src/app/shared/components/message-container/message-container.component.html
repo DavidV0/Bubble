@@ -1,0 +1,115 @@
+<div class="msg-wrapper" [class]="{
+    'active-user-msg': isMessageFromActiveUser(),
+    'change-bg-color': editMsg
+  }" (click)="hidePupUps()">
+  @if(!editMsg){
+  <div class="toolbar">
+    <!-- add 2 additional Reactions -->
+    <button class="btn-default icon-btn" (click)="toggleEmojiPicker('reaction', $event)">
+      <div class="btn-icon-reactions"></div>
+    </button>
+    @if (msgType == 'channel') {
+    <button class="btn-default icon-btn">
+      <div class="btn-icon-thread" (click)="toggleThreads(); showThread()"></div>
+    </button>
+    } @if(showEmojiPickerReaction){<emoji-mart [totalFrequentLines]="1" [showPreview]="false" set="google"
+      [darkMode]="false" color="#444DF2" (emojiSelect)="selectReaction($event)"
+      (click)="$event.stopPropagation()"></emoji-mart>} @if (isMessageFromActiveUser()) {
+    <button class="btn-default icon-btn" (click)="toggleMsgMenu($event)">
+      <div class="btn-icon-menu"></div>
+    </button>
+    <div class="more-menu" [class.show]="showMsgMenu">
+      <button class="btn-default text-btn" (click)="openEditMsgField($event)">
+        Nachricht bearbeiten
+      </button>
+      <button class="btn-default text-btn" (click)="deleteMessage($event)">
+        Nachricht löschen
+      </button>
+    </div>
+    }
+  </div>
+  }
+  <img src="{{ message.creator.imgPath }}" alt="" />
+  @if (!editMsg) {
+  <div class="msg-content-wrapper">
+    <div class="content-header">
+      <span class="msg-creator-name" (click)="selectUser(message.creator)">{{
+        message.creator.name
+        }}</span>
+      <span class="msg-time">
+        {{ message.date.getHours() }}:{{
+        (message.date.getMinutes() < 10 ? "0" : "" ) + message.date.getMinutes() }} Uhr </span>
+    </div>
+    <div class="msg-content">{{ message.content }}</div>
+    <div class="msg-footer">
+      @if(msgType == 'channel'){
+      <div class="msg-thread-wrapper">
+        <span class="thread-replies" (click)="toggleThreads(); showThread()">
+          {{ message.answers.amount > 0 ? message.answers.amount : "" }}
+          Antworten</span>
+      </div>
+      @if (message.answers.amount > 0) {
+      <div>
+        <span class="thread-last-reply-time">Letzte Antwort {{ message.answers.lastAnswer.getHours() }}:{{
+          (message.answers.lastAnswer.getMinutes() < 10 ? "0" : "" ) + message.answers.lastAnswer.getMinutes() }}</span>
+      </div>
+      } }
+      <div class="reaction-wrapper">
+        @if(message.reactions.length > 0){
+        <button class="btn-default icon-btn" (click)="toggleEmojiPicker('reaction', $event)">
+          <div class="btn-icon-reactions"></div>
+        </button>
+        } @for (reaction of message.reactions; track reaction) {
+        <div class="reaction-chip" (click)="addReaction(reaction.emoji)">
+          <span>{{ reaction.emoji }}</span>
+          <span>{{ reaction.users.length }}</span>
+          <div class="reaction-chip-info">
+            <span>{{ getReactionNames(reaction.emoji) }}</span>
+            <span>hat reagiert</span>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="files-wrapper">
+      @for (fileName of message.files; track fileName; let idx = $index) {
+      <div class="file">
+        <img src="{{ getFileImgPath(fileName) }}" alt="fileImg" />
+        <span>{{ fileName }}</span>
+        <div class="file-btn-wrapper">
+          <button class="btn-default icon-btn" (click)="downloadFile(idx)">
+            <div class="download-btn-icon"></div>
+          </button>
+          <button class="btn-default icon-btn" (click)="openFile(idx)">
+            <div class="open-btn-icon"></div>
+          </button>
+          <button class="btn-default icon-btn" (click)="deleteFile(idx)">
+            <div class="delete-btn-icon"></div>
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  } @else {
+  <div class="wrapper-edit-msg">
+    <textarea name="messageContent" #messageContent="ngModel" [(ngModel)]="newMsgContent" (keyup)="resizeTextarea()"
+      #textarea></textarea>
+    <div class="edit-msg-footer">
+      <button class="btn-default icon-btn" (click)="toggleEmojiPicker('editMsg', $event)">
+        <div class="btn-icon-reactions"></div>
+      </button>
+      @if(showEmojiPickerEditMsg){<emoji-mart [totalFrequentLines]="1" [showPreview]="false" [darkMode]="false"
+        color="#444DF2" (emojiSelect)="addEmoji($event)" (click)="$event.stopPropagation()"></emoji-mart>}
+      <div>
+        <button class="btn-default secondary-btn" (click)="editMsg = false">
+          Abbrechen
+        </button>
+        <button class="btn-default primary-btn" (click)="updateMessage()">
+          Speichern
+        </button>
+      </div>
+    </div>
+  </div>
+  }
+</div>

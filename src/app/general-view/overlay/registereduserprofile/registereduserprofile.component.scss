@@ -1,0 +1,161 @@
+@import './../../../shared/styles/includeStyles.scss';
+
+.registered-user-profile-card {
+    position: absolute;
+    right: 20px;
+    top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    padding: 40px;
+    border-radius: 30px 0 30px 30px;
+    width: fit-content;
+    min-width: 500px;
+    background-color: $white;
+
+    >.card-header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        >.back-btn {
+            width: 40px;
+
+            >.back-btn-icon {
+                mask-image: url("/Angular/DABubble/assets/icons/close.svg");
+            }
+        }
+    }
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    width: 100%;
+
+    >img {
+        width: 200px;
+        aspect-ratio: 1;
+        align-self: center;
+        border-radius: 100%;
+    }
+
+    >.name-status-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        >.name-editBtn-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            >h2 {
+                font-size: $fnt-size-M;
+            }
+        }
+
+        >.status-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: $fnt-size-S;
+            color: $dark-grey;
+
+            >.status-lamp {
+                width: 16px;
+                aspect-ratio: 1;
+                border-radius: 100%;
+                background-color: $dark-grey;
+            }
+        }
+
+        >.status-wrapper.active {
+            color: $online-green;
+
+            >.status-lamp {
+                background-color: $online-green;
+            }
+        }
+    }
+
+    >.email-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        >div {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: $fnt-size-S;
+
+            >img {
+                width: 30px;
+                aspect-ratio: 1;
+            }
+        }
+
+        >span {
+            color: $email-blue;
+            margin-left: 50px;
+        }
+    }
+}
+
+@media(max-width: 1350px) {
+
+    .registered-user-profile-card {
+        top: 80px;
+        right: 0;
+        min-width: 90vw !important;
+
+    }
+
+    .card-content {
+        gap: 25px;
+        width: 100%;
+
+        >img {
+            width: 100px;
+        }
+
+        >.name-status-wrapper {
+            gap: 15px;
+
+            >.name-editBtn-wrapper {
+                >h2 {
+                    font-size: $fnt-size-S;
+                }
+            }
+
+            >.status-wrapper {
+                gap: 15px;
+                font-size: $fnt-size-S;
+
+                >.status-lamp {
+                    width: 12px;
+                    aspect-ratio: 1;
+                }
+            }
+
+        }
+
+        >.email-wrapper {
+            gap: 10px;
+
+            >div {
+                gap: 10px;
+                font-size: $fnt-size-S;
+
+                >img {
+                    width: 20px;
+                    aspect-ratio: 1;
+                }
+            }
+
+        }
+    }
+}

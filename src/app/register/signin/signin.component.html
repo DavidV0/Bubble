@@ -1,0 +1,54 @@
+<div class="main">
+    <div class="login-container-signin">
+        <div class="headline-container-signin">
+            <div class="headder-arrow-signin">
+                <img src="assets/img/arrow_back.png" class="go-back-signin" (click)="goBack()">
+                <div class="headline-signin">Konto erstellen</div>
+            </div>
+            <div class="subheadline-signin">
+                Mit deinem Namen und deiner E-Mail-Adresse hast du dein neues DABubble-Konto.
+            </div>
+        </div>
+        <form (ngSubmit)="onSubmit(f)" class="input-container-signin" #f="ngForm">
+            <input type="text" required placeholder="Vorname und Nachname" id="userName" name="userName" ngModel
+                #userName="ngModel" class="input-name-signin input-fields-signin" [minLength]="4" />
+            @if (!userName.valid && userName.touched) {
+            <div class="invalid-input-signin">
+                *Bitte geben Sie Ihren Namen ein.
+            </div>
+            }
+            <input type="email" required placeholder="beispielname.@email.com" id="userEmail" name="userEmail" ngModel
+                #userEmail="ngModel" class="input-email-signin input-fields-signin" email />
+            @if (!userEmail.valid && userEmail.touched) {
+            <div class="invalid-input-signin">
+                *Diese E-Mail-Adresse ist leider ungültig.
+            </div>
+            }
+            <input type="password" required placeholder="Passwort" id="password" name="password" ngModel
+                #password="ngModel" class="input-pw-signin input-fields-signin"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ !&quot;#$%&amp;'()*+,\-./:;&lt;=&gt;?@[\\\]^_`{|}~]).{8,20}$" />
+            @if (!password.valid && password.touched) {
+            <div class="invalid-input-signin">
+                *Bitte legen Sie Ihr Passwort fest. Mindestens 8 Zeichen/Nummern (mind 1 Kleinbuchstabe, 1
+                Großbuchstabe, 1 Nummer und 1 Sonderzeichen)
+            </div>
+            }
+            <div class="privacy-signin">
+                <input type="checkbox" class="checkbox-signin" name="checkbox" ngModel #checkbox="ngModel"
+                    (click)="checkboxChange()" [checked]="checkboxChange"
+                    [ngStyle]="checkboxChecked ? {'background-image': 'url(assets/img/check_box_checked.png)'} : {'background-image': 'url(assets/img/check_box_unchecked.png)'}">
+                <div>
+                    <div> Ich stimme der <a href="#/privacy">Datenschutzbestimmung</a> zu. </div>
+                    @if (!checkboxChecked && f.valid) {
+                    <div class="invalid-input-signin">Sie müssen das Kontrollkästchen aktivieren um fotzufahren.</div>
+                    }
+                </div>
+            </div>
+            <div class="btn-container-signin">
+                <button [disabled]="!f.valid || !checkboxChecked" type="submit" class="login-btn-signin">
+                    weiter
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

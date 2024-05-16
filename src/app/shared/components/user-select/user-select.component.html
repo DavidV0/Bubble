@@ -1,0 +1,38 @@
+<div class="wrapper-input-field">
+  <div class="form-field-ipt-style2">
+    <div class="ipt-field-wrapper user-search">
+      <div class="selected-user-list">
+        @for (user of selectedUsers; track user; let idx = $index) {
+        <div class="user-chip">
+          <img src="{{ user.imgPath }}" alt="avatar" />
+          <span>{{ user.name }}</span>
+          <button
+            class="btn-default icon-btn remove-user-btn"
+            (click)="removeUser(idx)"
+          >
+            <div class="back-btn-icon"></div>
+          </button>
+        </div>
+        }
+      </div>
+      <input
+        type="text"
+        placeholder="Namen eingeben"
+        name="selectMember"
+        #selectMember
+        (keyup)="filterUsers(selectMember.value)"
+        autocomplete="off"
+      />
+    </div>
+  </div>
+  @if (selectMember.value.length>0) {
+  <div class="user-list-dropdown">
+    @for (user of filteredUserList; track user; let idx = $index) {
+    <app-userlistitem
+      [user]="user"
+      (click)="addUser(idx); selectMember.value = ''"
+    ></app-userlistitem>
+    }
+  </div>
+  }
+</div>

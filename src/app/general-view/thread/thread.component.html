@@ -1,0 +1,28 @@
+<div class="content">
+  <div class="header">
+    <div>
+      <h2>Thread</h2>
+        <p class="channels-name"># {{ channel.name }}</p>
+    </div>
+    <button class="btn-default icon-btn back-btn" (click)="goBack()">
+      <div class="back-btn-icon"></div>
+    </button>
+  </div>
+  <div class="messages massages-wrapper">
+    @if(message.content != "") {
+    <app-message-container [message]="message" [msgType]="'thread'"></app-message-container>
+    }
+    @if (this.messages) {
+    @for (message of this.messages; let i = $index; track message) {
+    @if (i == 1) {
+    <div class="separator">
+      <p><b>{{this.messages[0].answers.amount}}</b> Antworten</p> <img src="assets/icons/Line.png" alt="">
+    </div>
+    }
+    <app-message-container [message]="message" [msgType]="'thread'"></app-message-container>
+    } }
+  </div>
+  <div class="textarea">
+    <app-textarea-container [type]="'thread'"></app-textarea-container>
+  </div>
+</div>

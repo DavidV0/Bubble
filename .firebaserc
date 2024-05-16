@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "dabubble-26c87": {
+      "hosting": {
+        "dabubble": [
+          "dabubble-26c87"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "dabubble-26c87"
+  }
+}

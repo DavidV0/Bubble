@@ -1,0 +1,110 @@
+@import "./../../../shared/styles/includeStyles.scss";
+@import "./../../../../styles.scss";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80vh;
+  border-radius: 30px;
+  background-color: white;
+}
+
+.header {
+  padding: 32px 45px 20px 45px;
+  width: 100%;
+  box-shadow: 0px 2px 10px 0px #00000014;
+  gap: 20px;
+
+  >h2 {
+    font-family: "Nunito";
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.74px;
+    text-align: left;
+    padding-bottom: 20px;
+  }
+}
+
+.massages-wrapper {
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start !important;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.pad20 {
+  padding: 20px;
+}
+
+.sendBtn {
+  >img {
+    width: 40px;
+    height: 40px;
+  }
+
+  &:not(:disabled):hover>img {
+    content: url("/Angular/DABubble/assets/icons/Sendiconhover.svg");
+  }
+}
+
+.ipt-field-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  >.wrapper-users {
+    display: flex;
+    flex-direction: column;
+
+    >.user-chip {
+      cursor: pointer;
+      display: flex;
+      gap: 8px;
+      padding: 4px 20px;
+      border-radius: 30px;
+      width: fit-content;
+      padding: 8px 16px;
+
+      >img {
+        width: 25px;
+        aspect-ratio: 1;
+      }
+
+      &:hover {
+        background-color: $prim-color-light-hover;
+      }
+    }
+  }
+
+  >.wrapper-channels {
+    display: flex;
+    flex-direction: column;
+
+    >.channel-chip {
+      cursor: pointer;
+      padding: 4px 20px;
+      border-radius: 30px;
+      width: fit-content;
+      padding: 8px 16px;
+
+      &:hover {
+        background-color: $prim-color-light-hover;
+      }
+    }
+  }
+}
+
+app-message-container {
+  width: 100%;
+  height: 20%;
+}
+
+
+@media (max-width: 1350px) {
+  .content {
+    height: 90vh;
+  }
+}

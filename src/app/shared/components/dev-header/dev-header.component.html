@@ -1,0 +1,13 @@
+
+<div class="content">
+    <div class="logo-mobile">
+      <div class="back-arrow" (click)="goBack()"> </div>
+        <img src="assets/icons/Workspace logo.jpg" alt="" />
+        <b>Devspace</b>
+      </div>
+    <div class="user-mobile">
+      <img src="{{ this.activeUser.imgPath }}" alt="" class="user-image-mobile"
+        (click)="overlayCtrlService.showOverlay('dropDownUserMenu')" />
+    </div>
+
+  </div>

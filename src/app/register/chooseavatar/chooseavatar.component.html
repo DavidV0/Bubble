@@ -1,0 +1,38 @@
+<div class="main">
+    <div class="choose-avatar-card">
+        <button class="btn-default icon-btn back-btn" (click)="goBack()">
+            <div class="back-btn-icon"><img src="" alt=""></div>
+        </button>
+        <div class="card-header">
+            <h2>Wähle deinen Avatar</h2>
+        </div>
+        <div class="card-content">
+            <img class="profile-img btn" src="{{ (customImgPath)? customImgPath: user.imgPath }}" alt="user-avatar">
+            <div class="card-content-avatar-wrapper">
+                <div class="avatar-list-text-wrapper">
+                    <span class="user-name"><b>{{ user.name }}</b></span>
+                    <span>Aus der Liste wählen</span>
+                </div>
+                <div class="avatar-list-img-wrapper">
+                    @for(imgPath of avatarImgPathList; track imgPath; let idx = $index){
+                    <button class="avatar-btn btn-default"
+                        [class.avatar-active]="user.imgPath == avatarImgPathList[idx]"
+                        (click)="changeAvatarImg(avatarImgPathList[idx]); clearCustomImg()">
+                        <img src="{{ imgPath }}" alt="">
+                    </button>
+                    }
+                </div>
+            </div>
+            <div class="card-content-upload-img-wrapper">
+                <span>eigenes Bild verwenden</span>
+                <label for="uploadImgBtn" class="btn-default secondary-btn">Datei hochladen</label>
+                <input id="uploadImgBtn" type="file" (change)="onFileSelected($event)">
+            </div>
+        </div>
+        <div class="card-footer">
+            <button (click)="createAccount()" class="btn-default primary-btn">Weiter</button>
+        </div>
+    </div>
+</div>
+
+<app-overlayaccountcreated [onIptChangeShowOverlay]="toggleOverlay"></app-overlayaccountcreated>

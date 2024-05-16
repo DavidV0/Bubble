@@ -1,0 +1,59 @@
+@import "./../../styles/includeStyles.scss";
+
+.wrapper-input-field {
+  position: relative;
+
+  >.user-list-dropdown {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 335px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 20px 21px;
+    background-color: $white;
+    border-radius: 0px 20px 20px 20px;
+    border: 1px solid $lightblue;
+    box-shadow: 0 2px 10px 0 rgba($color: $black, $alpha: 0.08);
+    z-index: 2;
+  }
+}
+
+.user-search {
+  flex-wrap: wrap;
+
+  >.selected-user-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: unset;
+    aspect-ratio: unset;
+    background-color: unset;
+
+    >.user-chip {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 3px 10px;
+      border-radius: 35px;
+      background-color: $prim-color-light-hover;
+
+      >img {
+        width: 34px;
+        aspect-ratio: 1;
+      }
+
+      >button {
+        width: 24px;
+
+        >.back-btn-icon {
+          mask-image: url("/Angular/DABubble/assets/icons/close.svg");
+        }
+      }
+    }
+  }
+}

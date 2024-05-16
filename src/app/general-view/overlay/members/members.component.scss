@@ -1,0 +1,71 @@
+@import "./../../../shared/styles/includeStyles.scss";
+@import "./../../../../styles.scss";
+
+.content {
+  position: absolute;
+  top: 220px;
+  right: 410px;
+  display: flex;
+  flex-direction: column;
+  width: 415px;
+  max-height: 500px;
+  padding: 40px;
+  gap: 20px;
+  border-radius: 30px 0px 30px 30px;
+  opacity: 0px;
+  background-color: white;
+
+  >div {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+
+    >h3 {
+      margin: 0;
+      font-family: "Nunito";
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32.74px;
+      text-align: left;
+      color: $black;
+    }
+
+    >.back-btn {
+      width: 40px;
+
+      >.back-btn-icon {
+        mask-image: url("/Angular/DABubble/assets/icons/close.svg");
+      }
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.bottom {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: start !important;
+  padding-top: 20px;
+  border-radius: 100px;
+  gap: 15px;
+  padding: 12px 29px 12px 29px;
+
+  >p {
+    margin: 0;
+  }
+
+  &:hover {
+    background-color: $prim-color-light-hover;
+    color: $prim-color;
+  }
+
+  &:hover img {
+    content: url("/Angular/DABubble/assets/icons/person_add_hover.svg");
+  }
+}

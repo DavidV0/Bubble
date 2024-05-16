@@ -1,0 +1,209 @@
+@import "./../../../shared/styles/includeStyles.scss";
+
+.edit-channel-card {
+  position: absolute;
+  top: 200px;
+  left: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+  border-radius: 0 30px 30px 30px;
+  width: fit-content;
+  min-width: 500px;
+  max-width: 876px;
+  background-color: $white;
+  font-size: $fnt-size-XS;
+
+  >.card-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    >h3 span {
+      margin-right: 15px;
+    }
+
+    >.back-btn {
+      width: 40px;
+
+      >.back-btn-icon {
+        mask-image: url(./../../../../assets/icons/close.svg);
+      }
+    }
+  }
+
+  >button {
+    align-self: flex-end;
+  }
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+
+  >.name-field-wrapper,
+  .channel-details-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 20px 0 20px;
+    border: 1px solid $lightblue;
+    border-radius: 20px;
+
+    >.field-header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: $fnt-size-XS !important;
+
+      >span {
+        font-weight: bold;
+      }
+    }
+
+    >.form-field-textarea-style2,
+    .form-field-ipt-style2 {
+      width: 100%;
+
+      .ipt-field-wrapper,
+      .textarea-field-wrapper {
+        margin-left: -20px;
+        margin-right: -20px;
+
+        >textarea {
+          overflow: hidden;
+          resize: none;
+          height: fit-content;
+        }
+      }
+    }
+
+    >.vertical-line {
+      width: 100%;
+      height: 1px;
+      margin: 20px 0;
+      background-color: $lightblue;
+    }
+
+    >.creator-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-self: flex-start;
+      margin-bottom: 20px;
+
+      >span:first-child {
+        font-weight: bold;
+      }
+
+      >span:nth-child(2) {
+        color: $prim-color-bright-hover;
+        font-size: 24px;
+      }
+    }
+  }
+
+  >.edit-field-view {
+    border-color: transparent;
+
+    >.field-header-wrapper span {
+      margin: -20px 0 0 -20px;
+      transition: all ease-out $transition-time;
+    }
+
+    >.field-header-wrapper button {
+      margin: -20px -20px 20px 0;
+      transition: all ease-out $transition-time;
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .edit-channel-card {
+    top: 200px;
+    left: 0px;
+    gap: 10px;
+    padding: 30px;
+    min-width: 100vw;
+    max-width: 100vw;
+    font-size: $fnt-size-XXS;
+
+    >.card-header {
+      >h3 span {
+        margin-right: 10px;
+      }
+
+      >.back-btn {
+        width: 30px;
+      }
+    }
+  }
+
+  .card-content {
+    gap: 10px;
+    width: 100%;
+
+    >.name-field-wrapper,
+    .channel-details-wrapper {
+      padding: 20px 20px 0 20px;
+
+      >.field-header-wrapper {
+        font-size: $fnt-size-XXS !important;
+      }
+
+      >.form-field-textarea-style2,
+      .form-field-ipt-style2 {
+        width: 100%;
+
+        .ipt-field-wrapper,
+        .textarea-field-wrapper {
+          margin-left: -20px;
+          margin-right: -20px;
+
+          >textarea {
+            font-size: $fnt-size-XXS !important;
+          }
+        }
+      }
+
+      >.vertical-line {
+        width: 100%;
+        height: 1px;
+        margin: 20px 0;
+      }
+
+      >.creator-wrapper {
+        margin-bottom: 20px;
+
+        >span:first-child {
+          font-weight: bold;
+        }
+
+        >span:nth-child(2) {
+          font-size: $fnt-size-XS;
+        }
+      }
+    }
+
+    >.edit-field-view {
+      >.field-header-wrapper span {
+        margin: -20px 0 0 -20px;
+      }
+
+      >.field-header-wrapper button {
+        margin: -20px -20px 20px 0;
+      }
+    }
+  }
+
+  h3 {
+    font-size: $fnt-size-XS !important;
+
+  }
+}

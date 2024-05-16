@@ -1,0 +1,157 @@
+@import "./../../styles/includeStyles.scss";
+@import "./../../../../styles.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: white !important;
+  aspect-ratio: 0 !important;
+  width: 100% !important;
+
+  >textarea {
+    border: unset !important;
+    outline: none !important;
+    resize: none;
+  }
+}
+
+emoji-mart {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.icons {
+  background-color: white !important;
+  display: flex;
+  flex-direction: row;
+  width: 100% !important;
+  justify-content: space-between;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+
+  >.line {
+    height: 70%;
+    width: 2px;
+    background-color: #adb0d9;
+  }
+
+
+  >#openFile {
+    cursor: pointer;
+    padding: 8px;
+
+    &:hover {
+      content: url("/Angular/DABubble/assets/icons/addhover.svg");
+      background-color: $prim-color-light-hover;
+      border-radius: 50%;
+    }
+  }
+
+
+  >#openEmoji {
+    cursor: pointer;
+    padding: 8px;
+
+    &:hover {
+      content: url("/Angular/DABubble/assets/icons/sentiment_satisfiedhover.svg");
+      background-color: $prim-color-light-hover;
+      border-radius: 50%;
+    }
+  }
+
+
+  >#openUserList {
+    cursor: pointer;
+    padding: 8px;
+
+    &:hover {
+      content: url("/Angular/DABubble/assets/icons/alternate_emailhover.svg");
+      background-color: $prim-color-light-hover;
+      border-radius: 50%;
+    }
+  }
+}
+
+.sendBtn {
+  width: 40px;
+  height: 40px;
+
+
+  &:hover {
+    content: url("/Angular/DABubble/assets/icons/Sendiconhover.svg");
+    cursor: pointer;
+  }
+}
+
+.files-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  >.file {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    background-color: white;
+    border-radius: 30px;
+
+    >img {
+      width: 40px;
+      aspect-ratio: 1;
+    }
+
+    >.file-btn-wrapper {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      opacity: 0;
+      bottom: 50%;
+      transform: translateY(50%);
+      width: 100%;
+      height: 100%;
+      padding: 8px 16px;
+      border-radius: 30px;
+      background-color: rgba($color: $online-green, $alpha: 0.2);
+      right: 0;
+
+
+      >button {
+        background-color: white;
+        padding: 8px;
+        width: 32px;
+        box-shadow: 0px 2px 10px 0px #00000014;
+      }
+
+      .delete-btn-icon {
+        mask-image: url("/Angular/DABubble/assets/icons/delete.png");
+      }
+    }
+
+    &:hover {
+      >.file-btn-wrapper {
+        opacity: 1;
+        transition: all ease-in-out 200ms;
+      }
+    }
+  }
+}
+
+@media(max-width: 1350px) {
+  emoji-mart {
+    position: absolute;
+    bottom: 120px;
+    right: 0;
+    z-index: 10;
+  }
+}

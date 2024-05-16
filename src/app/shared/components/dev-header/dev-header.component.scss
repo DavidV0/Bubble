@@ -1,0 +1,51 @@
+.content {
+  padding: 8px 16px 0 16px;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  height: 10vh;
+}
+
+.logo-mobile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  >.back-arrow {
+    cursor: pointer;
+    background-image: url(../../../../assets/icons/68.\ Arrow.svg);
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  >img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+
+  >b {
+    font-family: "Nunito";
+  }
+}
+
+.user-mobile {
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+
+  .user-image-mobile {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (min-width: 1350px) {
+  .content {
+    display: none;
+  }
+}

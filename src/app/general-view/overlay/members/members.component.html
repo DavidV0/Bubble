@@ -1,0 +1,27 @@
+<div class="content">
+  <div>
+    <h3>Mitglieder</h3>
+
+    <button class="btn-default icon-btn back-btn" (click)="overlayCtrlService.hideOverlay()">
+      <div class="back-btn-icon"></div>
+    </button>
+  </div>
+  <div class="list">
+    @for (member of activeChannel.members; track member) {
+    <app-userlistitem [user]="member" (click)="
+        overlayCtrlService.showOverlay('userProfile');
+        $event.stopPropagation();
+        overlayCtrlService.selectUser(member)
+      "></app-userlistitem>
+    }
+  </div>
+
+  <div class="bottom">
+    <img src="assets/icons/person_add.svg" alt="" />
+    <p (click)="
+        overlayCtrlService.showOverlay('add-members'); $event.stopPropagation()
+      ">
+      Mitglieder hinzufügen
+    </p>
+  </div>
+</div>

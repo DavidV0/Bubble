@@ -1,0 +1,44 @@
+<div class="main">
+    @if (isLoginShowen) {
+    <div class="header">
+        <div class="create-account">
+            <div>Neu bei DABubble ?</div>
+            <div (click)="goToSignIn()" class="create">Konto erstellen</div>
+        </div>
+        <div class="non-animation">
+            <img src="assets/img/Logo.png" alt="" class="first-logo-without-animation" />
+            <img src="assets/img/Logo name.png" alt="" class="second-logo-without-animation" />
+        </div>
+    </div>
+    }
+    @if (!isLoginShowen) {
+    <div class="non-animation">
+        <img src="assets/img/Logo.png" alt="" class="first-logo-without-animation" />
+        <img src="assets/img/Logo name.png" alt="" class="second-logo-without-animation" />
+    </div>
+    }
+
+
+    <div class="content">
+        @if (isLoginShowen) {
+        <app-login (isPwForgotten)="showPwComponent($event)"></app-login>
+        } @if (isSignIsShowen) {
+        <app-signin (isShowen)="showSignInComponent($event)" (chooseAvatar)="showAvatar($event)"></app-signin>
+        } @if (isResetPwIsShowen) {
+        <app-sendemail (isShowen)="showMain($event)"></app-sendemail>
+        } @if (chooseAvatar) {
+        <app-chooseavatar (isShowen)="showMain($event)"></app-chooseavatar>
+        }
+    </div>
+    <div class="footer-container">
+        <a routerLink="/imprint">Impressum</a>
+        <a routerLink="/privacy">Datenschutz</a>
+    </div>
+</div>
+
+@if (!animationPlayed) {
+    <div class="overlay-intro" [ngClass]="{'mobileAnimationOff': mobileAnimation}">
+        <img src="assets/img/Logo.png" alt="" class="first-logo" />
+        <img src="assets/img/Logo name.png" alt="" class="second-logo" />
+    </div>
+}
