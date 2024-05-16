@@ -78,7 +78,7 @@
       }
 
       .dropdown {
-        background-image: url("/bubble/assets/icons/expand_more.png");
+        background-image: url("/Angular/DABubble/assets/icons/expand_more.png");
       }
     }
   }
@@ -117,7 +117,7 @@
     }
 
     .dropdown {
-      background-image: url("/bubble/assets/icons/expand_more.png");
+      background-image: url("/Angular/DABubble/assets/icons/expand_more.png");
     }
   }
 }
@@ -136,13 +136,13 @@
 
   &:hover {
     >img {
-      content: url("/bubble/assets/icons/person_add_hover.svg");
+      content: url("/Angular/DABubble/assets/icons/person_add_hover.svg");
     }
   }
 }
 
 .dropdown {
-  background-image: url("/bubble/assets/img/keyboard_arrow_down.png");
+  background-image: url("/Angular/DABubble/assets/img/keyboard_arrow_down.png");
   width: 30px;
   height: 30px;
 }
@@ -182,12 +182,15 @@ app-message-container {
 
   .timestamp {
     >.timestamp-time {
-      width: 30%;
+      width: 50%;
       font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     >img {
-      width: 30%;
+      width: 20%;
     }
   }
 

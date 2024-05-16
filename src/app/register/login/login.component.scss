@@ -26,7 +26,6 @@
 .headline-container-login {
   gap: 30px;
   text-align: center;
-  margin: 10px 10px 30px 10px;
 }
 
 .login-container-login {
@@ -69,14 +68,14 @@
 }
 
 .input-pw-login {
-  background-image: url("/bubble/assets/img/lock.png");
+  background-image: url("/Angular/DABubble/assets/img/lock.png");
   background-repeat: no-repeat;
   background-position: 20px 50%;
   margin-top: 30px;
 }
 
 .input-email-login {
-  background-image: url("/bubble/assets/img/mail.png");
+  background-image: url("/Angular/DABubble/assets/img/mail.png");
   background-repeat: no-repeat;
   background-position: left;
   background-position: 20px 50%;
@@ -201,12 +200,12 @@
 
   .input-fields-login {
     font-size: 14px;
-    padding: 14px 0px 14px 64px;
+    padding: 14px 0px 14px 50px;
   }
 
   .forgot-pw-login {
     font-size: 16px;
-    margin: 20px 0 20px 0;
+    margin: 10px 0 10px 0;
   }
 
   .input-pw-login {
@@ -219,7 +218,7 @@
 
   .login-btn-login,
   .guest-login-login {
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px 10px
   }
 
@@ -239,6 +238,7 @@
 
   .btn-container-login {
     margin-bottom: 10px;
+    gap: 10px;
   }
 
 }

@@ -53,7 +53,7 @@
     cursor: pointer;
 
     &:hover {
-      content: url("/bubble/assets/icons/edit_squarehover.svg");
+      content: url("/Angular/DABubble/assets/icons/edit_squarehover.svg");
       width: 40px;
       height: 40px;
       border-radius: 50px;
@@ -105,7 +105,7 @@
 }
 
 .dropdown {
-  background-image: url("/bubble/assets/icons/arrow_drop_down.svg");
+  background-image: url("/Angular/DABubble/assets/icons/arrow_drop_down.svg");
   width: 30px;
   height: 30px;
   cursor: pointer;
@@ -122,24 +122,24 @@
 
 
     .dropdown {
-      background-image: url("/bubble/assets/icons/arrow_drop_downhover.svg");
+      background-image: url("/Angular/DABubble/assets/icons/arrow_drop_downhover.svg");
     }
 
     >img {
-      content: url("/bubble/assets/icons/workspaceshover.svg");
+      content: url("/Angular/DABubble/assets/icons/workspaceshover.svg");
     }
   }
 }
 
 .plus-icon {
-  background-image: url("/bubble/assets/icons/add.svg");
+  background-image: url("/Angular/DABubble/assets/icons/add.svg");
   width: 24px;
   height: 24px;
   cursor: pointer;
 
 
   &:hover {
-    background-image: url("/bubble/assets/icons/addhover.svg");
+    background-image: url("/Angular/DABubble/assets/icons/addhover.svg");
     border-radius: 50px;
     background-color: $prim-color-light-hover;
     padding: 8px;
@@ -203,7 +203,7 @@
   }
 
   &:hover img {
-    content: url("/bubble/assets/icons/add_circle_hover.jpg");
+    content: url("/Angular/DABubble/assets/icons/add_circle_hover.jpg");
   }
 }
 

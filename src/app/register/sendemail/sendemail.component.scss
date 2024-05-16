@@ -29,7 +29,7 @@
         width: 40px;
 
         >.back-btn-icon {
-            mask-image: url("/bubble/assets/icons/arrow_left_black.svg");
+            mask-image: url("/Angular/DABubble/assets/icons/arrow_left_black.svg");
         }
     }
 
@@ -49,7 +49,7 @@
 
         .form-field-ipt-text-icon {
             .ipt-email-img {
-                mask-image: url("/bubble/assets/img/mail.png");
+                mask-image: url("/Angular/DABubble/assets/img/mail.png");
             }
         }
 
@@ -60,6 +60,63 @@
 
         >button {
             align-self: flex-end;
+        }
+    }
+}
+
+@media (max-width: 1350px) {
+    .send-email-card {
+        width: unset;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 20px;
+        border-radius: $border-radius-large;
+        font-size: $fnt-size-S;
+        background-color: white;
+    
+        >.back-btn {
+            position: absolute;
+            left: 0px;
+            top: 10px;
+            width: 60px;
+    
+            >.back-btn-icon {
+                mask-image: url("/Angular/DABubble/assets/icons/arrow_left_black.svg");
+            }
+        }
+    
+        >.card-header {
+            color: $prim-color;
+            text-align: center;
+    
+            >h2 {
+                font-size: 28px;
+            }
+        }
+    
+        >.card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+    
+            .form-field-ipt-text-icon {
+                .ipt-email-img {
+                    mask-image: url("/Angular/DABubble/assets/img/mail.png");
+                }
+            }
+    
+            >.info-text {
+                text-align: center;
+                color: $dark-grey;
+            }
+    
+            >button {
+                align-self: flex-end;
+            }
         }
     }
 }

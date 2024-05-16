@@ -49,7 +49,7 @@
           Antworten</span>
       </div>
       @if (message.answers.amount > 0) {
-      <div>
+      <div class="thread-last-reply">
         <span class="thread-last-reply-time">Letzte Antwort {{ message.answers.lastAnswer.getHours() }}:{{
           (message.answers.lastAnswer.getMinutes() < 10 ? "0" : "" ) + message.answers.lastAnswer.getMinutes() }}</span>
       </div>

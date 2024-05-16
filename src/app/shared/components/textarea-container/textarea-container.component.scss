@@ -46,7 +46,7 @@ emoji-mart {
     padding: 8px;
 
     &:hover {
-      content: url("/bubble/assets/icons/addhover.svg");
+      content: url("/Angular/DABubble/assets/icons/addhover.svg");
       background-color: $prim-color-light-hover;
       border-radius: 50%;
     }
@@ -58,7 +58,7 @@ emoji-mart {
     padding: 8px;
 
     &:hover {
-      content: url("/bubble/assets/icons/sentiment_satisfiedhover.svg");
+      content: url("/Angular/DABubble/assets/icons/sentiment_satisfiedhover.svg");
       background-color: $prim-color-light-hover;
       border-radius: 50%;
     }
@@ -70,7 +70,7 @@ emoji-mart {
     padding: 8px;
 
     &:hover {
-      content: url("/bubble/assets/icons/alternate_emailhover.svg");
+      content: url("/Angular/DABubble/assets/icons/alternate_emailhover.svg");
       background-color: $prim-color-light-hover;
       border-radius: 50%;
     }
@@ -83,7 +83,7 @@ emoji-mart {
 
 
   &:hover {
-    content: url("/bubble/assets/icons/Sendiconhover.svg");
+    content: url("/Angular/DABubble/assets/icons/Sendiconhover.svg");
     cursor: pointer;
   }
 }
@@ -134,7 +134,7 @@ emoji-mart {
       }
 
       .delete-btn-icon {
-        mask-image: url("/bubble/assets/icons/delete.png");
+        mask-image: url("/Angular/DABubble/assets/icons/delete.png");
       }
     }
 
